@@ -6,11 +6,11 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Veiculo'), ['action' => 'edit', $veiculo->idveiculo]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Veiculo'), ['action' => 'delete', $veiculo->idveiculo], ['confirm' => __('Are you sure you want to delete # {0}?', $veiculo->idveiculo)]) ?> </li>
-        <li><?= $this->Html->link(__('List Veiculo'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Veiculo'), ['action' => 'add']) ?> </li>
+        <li class="heading"><?= __('Ações' ) ?></li>
+        <li><?= $this->Html->link(__('Editar Veiculo'), ['action' => 'edit', $veiculo->idveiculo]) ?> </li>
+        <li><?= $this->Form->postLink(__('Deletar Veiculo'), ['action' => 'delete', $veiculo->idveiculo], ['confirm' => __('Você tem certeza que gostaria de deletar # {0}?', $veiculo->idveiculo)]) ?> </li>
+        <li><?= $this->Html->link(__('Listar Veiculo'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Novo Veiculo'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="veiculo view large-9 medium-8 columns content">

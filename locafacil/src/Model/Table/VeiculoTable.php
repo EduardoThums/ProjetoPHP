@@ -52,8 +52,7 @@ class VeiculoTable extends Table
             ->scalar('placa')
             ->maxLength('placa', 15)
             ->requirePresence('placa', 'create')
-            ->notEmpty('placa')
-            ->add('placa', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->notEmpty('placa');
 
         $validator
             ->scalar('fabricante')
@@ -97,19 +96,5 @@ class VeiculoTable extends Table
             ->notEmpty('vidroeletrico');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->isUnique(['placa']));
-
-        return $rules;
     }
 }

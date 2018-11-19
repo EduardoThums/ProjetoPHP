@@ -6,20 +6,20 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações' ) ?></li>
         <li><?= $this->Form->postLink(
-                __('Delete'),
+                __('Deletar'),
                 ['action' => 'delete', $veiculo->idveiculo],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $veiculo->idveiculo)]
+                ['confirm' => __('Você tem certeza que gostaria de deletar # {0}?', $veiculo->idveiculo)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Veiculo'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listar Veiculo'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="veiculo form large-9 medium-8 columns content">
     <?= $this->Form->create($veiculo) ?>
     <fieldset>
-        <legend><?= __('Edit Veiculo') ?></legend>
+        <legend><?= __('Editar Veiculo') ?></legend>
         <?php
             echo $this->Form->control('placa');
             echo $this->Form->control('fabricante');
@@ -31,6 +31,6 @@
             echo $this->Form->control('vidroeletrico');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Enviar')) ?>
     <?= $this->Form->end() ?>
 </div>

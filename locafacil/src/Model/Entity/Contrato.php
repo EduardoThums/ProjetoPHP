@@ -8,7 +8,6 @@ use Cake\ORM\Entity;
  *
  * @property int $idcontrato
  * @property int $idcliente
- * @property int $idplano
  * @property int $idveiculo
  * @property \Cake\I18n\FrozenDate $data_validade
  */
@@ -26,7 +25,6 @@ class Contrato extends Entity
      */
     protected $_accessible = [
         'idcliente' => true,
-        'idplano' => true,
         'idveiculo' => true,
         'data_validade' => true
     ];

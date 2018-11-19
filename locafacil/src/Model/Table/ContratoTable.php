@@ -54,11 +54,6 @@ class ContratoTable extends Table
             ->notEmpty('idcliente');
 
         $validator
-            ->integer('idplano')
-            ->requirePresence('idplano', 'create')
-            ->notEmpty('idplano');
-
-        $validator
             ->integer('idveiculo')
             ->requirePresence('idveiculo', 'create')
             ->notEmpty('idveiculo');

@@ -37,10 +37,6 @@ legend {
     color:#15848F;
 }
 
-.row {
-    max-width: 80rem;
-}
-
 .actions.columns {
     margin-top:1rem;
     border-left: 5px solid #15848F;
@@ -474,10 +470,6 @@ div.message.hidden {
     text-align: right;
 }
 
-.content {
-    padding: 2rem;
-}
-
 /* Use 'one true layout' methods to get equal height columns */
 .container {
     overflow: hidden;
@@ -485,17 +477,6 @@ div.message.hidden {
 }
 
 /* Force equal height by overflowing */
-.content,
-#actions-sidebar {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
-}
-@media(max-width: 640px) {
-    #actions-sidebar {
-        padding-bottom: 2rem;
-        margin-bottom: 0;
-    }
-}
 
 .content h3 {
     color: #be140b;
@@ -520,5 +501,5 @@ div.message.hidden {
 
 table td {
     vertical-align: top;
-    word-break: break-all;
+
 }

@@ -6,14 +6,14 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Veiculo'), ['action' => 'index']) ?></li>
+        <li class="heading"><?= __('Ações' ) ?></li>
+        <li><?= $this->Html->link(__('Listar Veiculo'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="veiculo form large-9 medium-8 columns content">
     <?= $this->Form->create($veiculo) ?>
     <fieldset>
-        <legend><?= __('Add Veiculo') ?></legend>
+        <legend><?= __('Adicionar Veiculo') ?></legend>
         <?php
             echo $this->Form->control('placa');
             echo $this->Form->control('fabricante');
@@ -25,6 +25,6 @@
             echo $this->Form->control('vidroeletrico');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Enviar')) ?>
     <?= $this->Form->end() ?>
 </div>

@@ -24,20 +24,15 @@ class ClienteFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'idcliente' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'idcliente' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'email' => ['type' => 'string', 'length' => 100, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'cpf' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'nome' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'cnh' => ['type' => 'string', 'fixed' => true, 'length' => 1, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
         'telefone' => ['type' => 'string', 'length' => 15, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'idendereco' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        '_indexes' => [
-            'cliente_endereco_fk' => ['type' => 'index', 'columns' => ['idendereco'], 'length' => []],
-        ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['idcliente'], 'length' => []],
-            'cliente__un' => ['type' => 'unique', 'columns' => ['email', 'cpf'], 'length' => []],
-            'cliente_endereco_fk' => ['type' => 'foreign', 'columns' => ['idendereco'], 'references' => ['endereco', 'idendereco'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
+            'email' => ['type' => 'unique', 'columns' => ['email'], 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -60,8 +55,7 @@ class ClienteFixture extends TestFixture
                 'cpf' => 1,
                 'nome' => 'Lorem ipsum dolor sit amet',
                 'cnh' => 'L',
-                'telefone' => 'Lorem ipsum d',
-                'idendereco' => 1
+                'telefone' => 'Lorem ipsum d'
             ],
         ];
         parent::init();

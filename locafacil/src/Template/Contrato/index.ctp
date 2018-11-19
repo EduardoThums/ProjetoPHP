@@ -6,35 +6,31 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Contrato'), ['action' => 'add']) ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
+        <li><?= $this->Html->link(__('Novo Contrato'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="contrato index large-9 medium-8 columns content">
-    <h3><?= __('Contrato') ?></h3>
+    <h3><?= __('Contratos') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('idcontrato') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('idcliente') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('idplano') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('idveiculo') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('data_validade') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('identificador cliente') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('identificador veiculo') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Data de Validade') ?></th>
+                <th scope="col" class="actions"><?= __('Ações' ) ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($contrato as $contrato): ?>
             <tr>
-                <td><?= $this->Number->format($contrato->idcontrato) ?></td>
                 <td><?= $this->Number->format($contrato->idcliente) ?></td>
-                <td><?= $this->Number->format($contrato->idplano) ?></td>
                 <td><?= $this->Number->format($contrato->idveiculo) ?></td>
                 <td><?= h($contrato->data_validade) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $contrato->idcontrato]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $contrato->idcontrato]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $contrato->idcontrato], ['confirm' => __('Are you sure you want to delete # {0}?', $contrato->idcontrato)]) ?>
+                <td class="actions" style="color:#1798a5">
+                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $contrato->idcontrato]) ?> |
+                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $contrato->idcontrato]) ?> |
+                    <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $contrato->idcontrato], ['confirm' => __('Você tem certeza que gostaria de deletar # {0}?', $contrato->idcontrato)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -42,12 +38,12 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->first('<< ' . __('primeiro')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
+            <?= $this->Paginator->next(__('próximo') . ' >') ?>
+            <?= $this->Paginator->last(__('último') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de um total de {{count}}')]) ?></p>
     </div>
 </div>

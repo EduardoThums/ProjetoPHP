@@ -12,7 +12,6 @@ use Cake\ORM\Entity;
  * @property string $nome
  * @property string $cnh
  * @property string $telefone
- * @property int $idendereco
  */
 class Cliente extends Entity
 {
@@ -31,7 +30,6 @@ class Cliente extends Entity
         'cpf' => true,
         'nome' => true,
         'cnh' => true,
-        'telefone' => true,
-        'idendereco' => true
+        'telefone' => true
     ];
 }

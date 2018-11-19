@@ -24,7 +24,7 @@ class VeiculoFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'idveiculo' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'idveiculo' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'placa' => ['type' => 'string', 'length' => 15, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'fabricante' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'ano' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
@@ -35,7 +35,6 @@ class VeiculoFixture extends TestFixture
         'vidroeletrico' => ['type' => 'string', 'fixed' => true, 'length' => 1, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['idveiculo'], 'length' => []],
-            'veiculo__un' => ['type' => 'unique', 'columns' => ['placa'], 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -56,7 +55,7 @@ class VeiculoFixture extends TestFixture
                 'idveiculo' => 1,
                 'placa' => 'Lorem ipsum d',
                 'fabricante' => 'Lorem ipsum dolor sit amet',
-                'ano' => '2018-11-17',
+                'ano' => '2018-11-19',
                 'modelo' => 'Lorem ipsum dolor sit amet',
                 'cor' => 'Lorem ipsum dolor ',
                 'radio' => 'L',

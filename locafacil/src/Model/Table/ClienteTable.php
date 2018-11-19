@@ -51,7 +51,8 @@ class ClienteTable extends Table
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
-            ->notEmpty('email');
+            ->notEmpty('email')
+            ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->integer('cpf')
@@ -75,11 +76,6 @@ class ClienteTable extends Table
             ->maxLength('telefone', 15)
             ->requirePresence('telefone', 'create')
             ->notEmpty('telefone');
-
-        $validator
-            ->integer('idendereco')
-            ->requirePresence('idendereco', 'create')
-            ->notEmpty('idendereco');
 
         return $validator;
     }
